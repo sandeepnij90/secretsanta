@@ -12,10 +12,6 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.12"
   },
-  "engines": {
-    "npm": "6.4.1",
-    "node": "8.16.2"
-  },
   "scripts": {
     "client": "npm run dev --prefix client",
     "server": "nodemon index.js",

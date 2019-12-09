@@ -7,18 +7,22 @@ const ContainerWrapper = styled.div<IProps>`
     max-width: ${props => props.maxWidth && `${props.maxWidth}px`}
     margin: auto;
     display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     height: 100%;
     align-items: center;
+    margin-top: ${props => props.marginTop && `${props.marginTop}px`}
+    
 `
 
 interface IProps {
     maxWidth?: number
+    marginTop?: number
 }
 
-const Container: FunctionComponent<IProps> = ({children, maxWidth=960}) => {
+const Container: FunctionComponent<IProps> = ({children, maxWidth=960, marginTop=0}) => {
     return (
-        <ContainerWrapper maxWidth={maxWidth}>
+        <ContainerWrapper maxWidth={maxWidth} marginTop={marginTop}>
             {children}
         </ContainerWrapper>
     )

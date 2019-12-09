@@ -13,10 +13,10 @@ import './styles.scss'
 const App: FunctionComponent = () => {
     return (
         <div>
-        <Snowfall/>
+        {/* <Snowfall/> */}
         <HashRouter>
             <Fragment>
-            <Back />
+            {/* <Back /> */}
 
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/quiz" component={Quiz} />
