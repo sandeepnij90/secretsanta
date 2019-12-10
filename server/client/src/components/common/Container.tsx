@@ -9,10 +9,11 @@ const ContainerWrapper = styled.div<IProps>`
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    height: 100%;
     align-items: center;
     margin-top: ${props => props.marginTop && `${props.marginTop}px`}
-    
+    box-sizing: border-box;
+    padding 15px; //watch this space;
+    min-height: 100%;
 `
 
 interface IProps {

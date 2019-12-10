@@ -1,10 +1,11 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import React, { FunctionComponent, useState, useEffect, Fragment } from 'react'
 import styled from 'styled-components'
 import { Input, Container } from 'components/common'
 import { useDispatch, useSelector } from 'react-redux'
 import { getError } from 'store/Reducer'
 import { withRouter, RouteComponentProps, Link } from 'react-router-dom'
 import { resetError, login } from 'store/Actions'
+import Back from 'components/Back'
 
 const Button = styled.button`
     // border: 0;
@@ -98,16 +99,20 @@ const SecretSanta: FunctionComponent<RouteComponentProps> = ({ history }) => {
     }
 
     return (
-        <Container maxWidth={600}>
-            <Wrapper>
-                <Heading>Secret Santa</Heading>
-                <Input onChange={handleName} label="Enter your name"  id="names" list={['Sandeep Nijjar','Jasmeen Nijjar','Mama Elf', 'Papa Elf', 'Raminder Sandher', 'Hardeep Tawakley', 'Tarun Tawakley', 'Sandeep Cheema', 'Steve Cheema', 'Sahib Cheema', 'Veer Cheema', 'Ravinder Basra', 'Wandeep Basra', 'Kabir Basra', 'Sonam Basra', 'Kaira Basra']} />
-                <Input onChange={handlePasscode} label="Enter your passcode" type="number" maxLength={4}/>
-                {errorMessage.length ? <Error>{generateError()}</Error> : ''}
-                <CheckboxContainer><input type="checkbox" id="tsandcs" onChange={handleTerms} checked={isAccepted} /> <label htmlFor="tsandcs">I have read  the <StyledLink to="/terms">very important rules</StyledLink></label></CheckboxContainer>
-                <Button disabled={!isAccepted} onClick={handleCheck}>Tell me the name</Button>
-            </Wrapper>
-        </Container>
+        <Fragment>
+            <Back />
+            <Container maxWidth={600}>
+                <Wrapper>
+                    <Heading>Secret Santa</Heading>
+                    <Input onChange={handleName} label="Enter your name"  id="names" list={['Sandeep Nijjar','Jasmeen Nijjar','Mama Elf', 'Papa Elf', 'Raminder Sandher', 'Hardeep Tawakley', 'Tarun Tawakley', 'Sandeep Cheema', 'Steve Cheema', 'Sahib Cheema', 'Veer Cheema', 'Ravinder Basra', 'Wandeep Basra', 'Kabir Basra', 'Sonam Basra', 'Kaira Basra']} />
+                    <Input onChange={handlePasscode} label="Enter your passcode" type="number" maxLength={4}/>
+                    {errorMessage.length ? <Error>{generateError()}</Error> : ''}
+                    <CheckboxContainer><input type="checkbox" id="tsandcs" onChange={handleTerms} checked={isAccepted} /> <label htmlFor="tsandcs">I have read the <StyledLink to="/terms">very important rules</StyledLink></label></CheckboxContainer>
+                    <Button disabled={!isAccepted} onClick={handleCheck}>Tell me the name</Button>
+                </Wrapper>
+            </Container>
+        </Fragment>
+
     )
 }
 

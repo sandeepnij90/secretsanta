@@ -13,11 +13,8 @@ import './styles.scss'
 const App: FunctionComponent = () => {
     return (
         <div>
-        {/* <Snowfall/> */}
         <HashRouter>
             <Fragment>
-            {/* <Back /> */}
-
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/quiz" component={Quiz} />
                 <Route exact path="/secretsanta" component={SecretSanta} />
@@ -26,7 +23,9 @@ const App: FunctionComponent = () => {
                 <Route exact path="/terms" component={Terms} />
             </Fragment>
         </HashRouter>
-        <img src="http://media.philly.com/images/tornpaperBottom.png" />
+        <img style={{bottom: 0, position:'relative'}} src="http://media.philly.com/images/tornpaperBottom.png" />
+        <Snowfall/>
+
         </div>
     )
 }

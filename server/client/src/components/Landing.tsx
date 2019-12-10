@@ -2,9 +2,9 @@ import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import { Container, Input } from 'components/common'
 import { Link } from 'react-router-dom'
-
 const Wrapper = styled.div`
     text-align: center;
+    display: grid;
 `
 
 const InputWrapper = styled.div`
@@ -16,7 +16,6 @@ const ButtonContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 16px;
-    margin-bottom: 200px;
     @media screen and (min-width: 490px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -70,11 +69,6 @@ const Landing: FunctionComponent = () => {
                     <p>Bring your festive cheer, frankincense and your ladoo! 🌕🎄 🎁 </p>
                     <p>Dress code: Santa Kurta optional 🎅</p>
                 </TextWrapper>
-
-
-
-
-
             <ButtonContainer>
                 <StyledLink to="/secretsanta" className="no-link"><Button>Secret Santa</Button></StyledLink>
                 <StyledLink to="/quiz" className="no-link"><Button>Quiz</Button></StyledLink>

@@ -3,17 +3,20 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const BackWrapper = styled.h3`
-    position: absolute;
+    position: relative;
     left: 10px;
     top: 10px;
     font-size: 24px;
     color: #ffffff;
     text-decoration: none;
 `
+const StyledLink = styled(Link)`
+    text-decoration: none;
+`
 
 const Back: FunctionComponent = () => {
     return (
-        <Link to="/"><BackWrapper>Back to bethleham</BackWrapper></Link>
+        <StyledLink to="/"><BackWrapper>Back to bethleham</BackWrapper></StyledLink>
     )
 }
 
